@@ -29,6 +29,7 @@ Problem Formulation
 
 
 Given a map M and a Path P{(i0, j0), (i1, j1), ... (iN, jN)}, the cost of the path is calculated as:
+
 $$
 g(P) = \sum_{k=1}^{N} c(i_{k-1}, j_{k-1}, i_k, j_k, M)
 $$
