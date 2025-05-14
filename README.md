@@ -25,10 +25,10 @@ Problem Formulation
 - Actions: Since we consider 4-connectedness, only four actions are available: Up, down, left and right (your program must expand each node in this order). Available actions for positions adjacent to the map boundary or obstacles are reduced accordingly.
 - Transition Model: Moving left moves the current position to the left, etc.
 - Goal Test: Check if the current state is the end position (i*, j*) given by the user.
-- Path Cost: Given a map M and a Path P{(i0, j0), (i1, j1), ... (iN, jN)}, the cost of the path is calculated as:
+- Path Cost: The cost of a path is the sum of the costs between adjacent points in the path, and the cost between adjacent points is 1 plus the difference between the elevation of the two points if we climb "uphill" or simply 1 if we stay "level" or slide "downhill".
 
-The scoring function is defined as:
 
+Given a map M and a Path P{(i0, j0), (i1, j1), ... (iN, jN)}, the cost of the path is calculated as:
 $$
 g(P) = \sum_{k=1}^{N} c(i_{k-1}, j_{k-1}, i_k, j_k, M)
 $$
@@ -43,7 +43,4 @@ c(a, b, c, d, M) =
 \end{cases}
 $$
 
-
 and M(a, b) is the elevation at the position (a, b). 
-
-The cost of a path is the sum of the costs between adjacent points in the path, and the cost between adjacent points is 1 plus the difference between the elevation of the two points if we climb "uphill" or simply 1 if we stay "level" or slide "downhill".
